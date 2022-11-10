@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buzon[
+<!ELEMENT buzon (cartas*,paquetes*)>
+<!ELEMENT cartas (carta*)>
+<!ELEMENT carta EMPTY>
+<!ATTLIST carta
+		  destinatario CDATA #REQUIRED
+			direccion CDATA #REQUIRED
+			remitente CDATA #REQUIRED
+			>
+<!ELEMENT paquetes (paquete*)>
+<!ELEMENT paquete EMPTY>
+<!ATTLIST paquete 
+			 destinatario CDATA #REQUIRED
+			direccion CDATA #REQUIRED
+			remitente CDATA #REQUIRED
+			>
+]>
+<buzon>
+	<cartas>
+		<carta destinatario="juan" direccion="calle del cielo" remitente="nacho" />
+		
+	</cartas>
+	<paquetes>
+		<paquete destinatario="pedro" direccion="calle del mar" remitente="pepe"/>
+	</paquetes>
+</buzon>

@@ -1,0 +1,60 @@
+<!--
+<!ELEMENT fabrica (piezas, motores, secciones, empleados)>
+<!ELEMENT piezas (pieza+)>
+<!ELEMENT pieza EMPTY>
+<!ATTLIST pieza
+	id ID #REQUIRED
+	compuesta IDREFS #IMPLIED>
+<!ELEMENT motores (motor+)>
+<!ELEMENT motore (trabajador+)>
+<!ATTLIST motor
+	id ID #REQUIRED
+	responsable IDREF #REQUIRED
+	piezas IDREFS #REQUIRED>
+<!ELEMENT trabajador EMPTY>
+<!ATTLIST trabajador
+	cod ID #REQUIRED
+	familiares IDREFS #IMPLIED>
+<!ELEMENT secciones (seccion+)>
+<!ELEMENT seccion EMPTY>
+<!ATTLIST seccion
+	cod ID #REQUIRED
+	motores IDREFS #REQUIRED>
+<!ELEMENT empleados (empleado+)>
+<!ELEMENT empleado EMPTY>
+<!ATTLIST empleado nif ID #REQUIRED>
+-->
+
+
+<!ELEMENT fabrica (piezas, motores, secciones, empleados)>
+<!ELEMENT piezas (pieza+)>
+<!ELEMENT pieza EMPTY>
+<!ENTITY % id_req "ID #REQUIRED">
+<!ENTITY % idrefs_req "IDREFS #REQUIRED">
+<!ENTITY % idref_req "IDREF #REQUIRED">
+<!ENTITY % idrefs_imp "IDREFS #IMPLIED">
+
+<!ATTLIST pieza
+	id %id_req;
+	compuesta %idrefs_imp;>
+<!ELEMENT motores (motor+)>
+<!ELEMENT motor (trabajador+)>
+<!ATTLIST motor
+	id %id_req;
+	responsable %idref_req;
+	piezas %idrefs_req;>
+<!ELEMENT trabajador EMPTY>
+<!ATTLIST trabajador
+	cod  %idref_req;
+	familiares %idrefs_imp;>
+<!ELEMENT secciones (seccion+)>
+<!ELEMENT seccion EMPTY>
+<!ATTLIST seccion
+	cod %id_req;
+	motores %idrefs_req;>
+<!ELEMENT empleados (empleado+)>
+<!ELEMENT empleado EMPTY>
+<!ATTLIST empleado nif %id_req;>
+
+
+

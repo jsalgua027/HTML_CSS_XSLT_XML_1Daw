@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE libreta SYSTEM "libreta.dtd">
+
+
+<libreta>
+	<usuarios>
+		<usuario id="_01">
+			<nombre>pepe</nombre>
+			<telefono/>
+			<direccion>calle del cielo</direccion>
+		</usuario>
+	</usuarios>
+	<clientes>
+		<cliente id="_02">
+			<nombre>juan </nombre>
+			<telefono/>
+			<direccion>calle del mar</direccion>
+		</cliente>
+	</clientes>
+</libreta>

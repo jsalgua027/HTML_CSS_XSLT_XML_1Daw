@@ -1,0 +1,64 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    
+            <xs:element name="cartelera" type="tipoCartelera"/>
+          
+       
+    <xs:complexType name="tipoCartelera">
+        <xs:sequence>
+            <xs:element name="pelicula" type="tipoPelicula" maxOccurs="unbounded"/>
+          
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="tipoPelicula">
+        <xs:sequence>
+            <xs:element name="titulo" type="xs:string"/>
+            <xs:element name="titulo_original" type="xs:string" minOccurs="0"/>
+            <xs:element name="nacionalidad" type="xs:string" minOccurs="0"/>
+            <xs:element name="genero" type="xs:string"/>
+            <xs:choice> <!-- se usa para los elementos vacios que pueden o no aparacer-->
+                <xs:element name="clasificacion" type="tipoClasificacion"/>
+                <xs:element name="sin_clasificar" type="tipoSinClasificar"/>
+            </xs:choice>
+            
+            <xs:element name="sinopsis" type="xs:string"/>
+            <xs:element name="director" type="xs:string"/>
+            <xs:element name="reparto" type="tipoReparto"/>
+            <xs:element name="web" type="xs:string" minOccurs="0"/>
+            <xs:element name="cartel" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="codigo" type="xs:ID" use="required"/>
+        <xs:attribute name="duracion" type="xs:positiveInteger" />
+        <xs:attribute name="año" type="xs:positiveInteger" default="2013"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipoClasificacion">        <!-- al aparacer o no solo con mecionarlo como complextype es necesario
+                                                        usamos tambien para meter el atributo,no hace falta xs:sequence-->
+  
+        <xs:attribute name="edad" type="tipoEdad" />
+    </xs:complexType>
+
+    <xs:complexType name="tipoSinClasificar"/> <!-- al aparacer o no solo con mecionarlo como complextype es necesario-->
+
+    <xs:complexType name="tipoReparto">
+        <xs:sequence>
+            <xs:element name="actor" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+       
+    </xs:complexType>
+
+    <xs:simpleType name="tipoEdad">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="tp|8|12|16|18 "/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
+
+
+
+
+<!-- -->
+            

@@ -1,0 +1,22 @@
+<!ELEMENT facturas (factura+)>
+<!ELEMENT factura ((datos-emisor,datos-cliente,detalle-factura)|(datos-emisor,detalle-factura,datos-cliente)|(datos-cliente,datos-emisor,detalle-factura)|(datos-cliente,detalle-factura,datos-emisor)|(detalle-factura,datos-emisor,datos-cliente)|(detalle-factura,datos-cliente,datos-emisor))>
+<!ATTLIST factura n_fact NMTOKEN #REQUIRED>
+<!ATTLIST factura fecha NMTOKEN #REQUIRED>
+<!ATTLIST factura moneda (Euro) #REQUIRED>
+<!ELEMENT datos-emisor (nombre,cif,telefono,poblacion)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT cif (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT poblacion (#PCDATA)>
+<!ATTLIST poblacion cod_postal NMTOKEN #REQUIRED>
+<!ELEMENT datos-cliente (nombre,cif,telefono,poblacion)>
+<!ELEMENT detalle-factura (linea+)>
+<!ATTLIST detalle-factura importe NMTOKEN #REQUIRED>
+<!ELEMENT linea (descripcion,cantidad,oferta?,descuento?,pvp)>
+<!ATTLIST linea codigo-articulo ID #REQUIRED>
+<!ATTLIST linea tipo (Libro|DVD|Varios) #REQUIRED>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT cantidad (#PCDATA)>
+<!ELEMENT oferta EMPTY>
+<!ELEMENT descuento (#PCDATA)>
+<!ELEMENT pvp (#PCDATA)>

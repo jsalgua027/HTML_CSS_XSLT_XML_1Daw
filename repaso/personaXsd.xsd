@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="persona" type="tipoPersona"/>
+
+        <xs:complexType name="tipoPersona">
+
+            <xs:sequence>
+                    <xs:element name="datos" type="info"/>
+                <xs:choice>
+                    <xs:element name="precio" type="tipoPrecio"/> <!-- minOccurs="0" para que pueda o no salir? -->
+                </xs:choice>
+
+            </xs:sequence>
+
+            <xs:attribute name="nacimiento" type="xs:date"/>                <!-- ATRIBUTO -->
+        </xs:complexType>
+
+        <xs:complexType name="info">
+            <xs:sequence>
+                <!--<xs:element name="nombre" type="xs:string" fixed="Pepe"/>    FIJAR UN SOLO DATO -->
+                <xs:element name="nombre" type="tipoNombre" /> 
+                <xs:element name="apellidos" type="tipoApellidos"/>
+                <xs:element name="dni" type="tipoDni"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+                <!-- Con esto solo podremos elegir los nombres que aparecen -->
+        <xs:simpleType name="tipoNombre">
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Pepe"/>
+                <xs:enumeration value="Juan"/>
+                <xs:enumeration value="Maria"/>
+            </xs:restriction>
+        </xs:simpleType>
+
+
+                <!--  Hace que el dni este obligado a tener 8 digitos -->
+         <xs:simpleType name="tipo-Dni">
+            <xs:restriction base="xs:positiveInteger">
+                <xs:minInclusive value="10000000"/> <!-- minimo 8 digitos -->
+                <xs:maxInclusive value="99999999"/> <!-- maximo 8 digitos  -->
+            </xs:restriction>
+        </xs:simpleType>
+
+                <!--  HACE QUE APELLIDOS SOLO PUEDA TENER X CARACTERES -->
+        <xs:simpleType name="tipoApellidos">
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="13"/>
+            </xs:restriction>
+        </xs:simpleType>
+
+
+                <!-- PARA QUE PRECIO PUEDA TENER UN ATRIBUTO CON DIFERENTES MONEDAS -->
+        <xs:complexType name="tipoPrecio" mixed="true">
+            <xs:attribute name="moneda" type="tipoMoneda"/>
+        </xs:complexType>
+
+        <xs:simpleType name="tipoMoneda">
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="euro"/>
+                <xs:enumeration value="dolar"/>
+                <xs:enumeration value="peso"/>
+                <!-- otra manera de hacerlo con pattern -->
+                <xs:pattern value="euro|dolar|peso"/>
+            </xs:restriction>
+        </xs:simpleType>
+
+                <!--  OTRA FORMA DE HACER LO DEL DNI para tener letras siguiendo un patron-->
+        <xs:simpleType name="tipoDni">
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[0-9]{8}-[A-Za-z]"/>   
+            </xs:restriction>   <!--  {8} para que se repita 8 veces-->
+        </xs:simpleType>        <!--  + para que se pueda repetir infinitamente -->
+</xs:schema>

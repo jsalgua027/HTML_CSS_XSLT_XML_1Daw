@@ -1,0 +1,11 @@
+<!ELEMENT Libro (Titulo, Contenido, Copyright)>
+<!ATTLIST Libro id CDATA #REQUIRED>
+<!ELEMENT Titulo (#PCDATA)>
+<!ELEMENT Contenido (Capitulo, Separacion?)+>
+<!ELEMENT Capitulo (Tema, Seccion+)>
+<!ATTLIST Capitulo materia CDATA #IMPLIED>
+<!ELEMENT Tema (#PCDATA)>
+<!ELEMENT Seccion (#PCDATA)>
+<!ATTLIST Seccion apartados CDATA #REQUIRED dificil CDATA #IMPLIED>
+<!ELEMENT Separacion EMPTY>
+<!ELEMENT Copyright (#PCDATA)>

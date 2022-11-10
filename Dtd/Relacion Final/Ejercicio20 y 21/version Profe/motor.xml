@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fabrica SYSTEM "motor.dtd">
+
+<fabrica>
+	<piezas>
+		<pieza id="p1" compuesta="p2 p3"/>
+		<pieza id="p2"/>
+		<pieza id="p3"/>
+		<pieza id="p4"/>
+	</piezas>
+	<motores>
+		<motor id="m1" responsable="_111" piezas="p1 p4">
+			<trabajador cod="_111"/>
+			<trabajador cod="_222" familiares="_333 _444"/>
+		</motor>
+		<motor id="m2" responsable="_222" piezas="p3">
+			<trabajador cod="_111"/>
+			<trabajador cod="_222" familiares="_333"/>
+		</motor>
+		<motor id="m3" responsable="_444" piezas="p2">
+			<trabajador cod="_444"/>
+			<trabajador cod="_555" familiares="_666"/>
+		</motor>
+	</motores>
+	<secciones>
+		<seccion cod="s1" motores="m1 m2"/>
+		<seccion cod="s2" motores="m3"/>
+	</secciones>
+	<empleados>
+		<empleado nif="_111"/>
+		<empleado nif="_222"/>
+		<empleado nif="_333"/>
+		<empleado nif="_444"/>
+		<empleado nif="_555"/>
+		<empleado nif="_666"/>
+	</empleados>
+</fabrica>

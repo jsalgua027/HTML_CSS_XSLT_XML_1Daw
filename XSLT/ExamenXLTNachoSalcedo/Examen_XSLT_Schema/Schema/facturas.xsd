@@ -1,0 +1,76 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="facturas" type="tipoFacturas"/>
+
+    <xs:complexType name="tipoFacturas">
+        <xs:sequence>
+        <xs:element name="factura" type="tipoFactura" maxOccurs="unbounded"/>
+        <xs:element name="n_fact" type="tipoNfac"/>
+        <xs:element name="fecha" type="tipoFecha"/>
+        <xs:element name="moneda" type="tipoMoneda"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoNfac" mixed="true">
+        <xs:attribute name="mes" type="xs:ID" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="tipoFecha" mixed="true">
+        <xs:attribute name="mes" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="tipoMoneda" mixed="true">
+        <xs:attribute name="mes" type="xs:string" fixed="Euro"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="tipoFactura">
+         <xs:sequence>
+            <xs:element name="datos-emisor" type="tiposEmisor" maxOccurs="unbounded"/>
+            <xs:element name="datos-cliente" type="tiposCliente" maxOccurs="unbounded"/>
+            <xs:element name="detalle-factura" type="tiposfactura" maxOccurs="unbounded"/>
+      </xs:sequence>      
+     
+    </xs:complexType>
+
+    <xs:complexType name="tiposEmisor">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" minOccurs="1"/>
+            <xs:element name="cif" type="xs:string" minOccurs="1"/>
+            <xs:element name="telefono" type="xs:string" minOccurs="1"/>
+            <xs:element name="poblacion" type="tipoPoblacion"/>
+
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="tipoPoblacion" mixed="true">
+        <xs:attribute name="cod_postal" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="tiposCliente">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" minOccurs="1"/>
+            <xs:element name="cif" type="xs:string" minOccurs="1"/>
+            <xs:element name="telefono" type="xs:string" minOccurs="1"/>
+            <xs:element name="poblacion" type="tipoPoblacion"/>
+
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="tiposfactura">
+        <xs:sequence>
+        <xs:element name="linea" type="tipoLinea"/>
+        <xs:element name="descripcion" type="xs:string" minOccurs="1"/>
+        <xs:element name="cantidad" type="xs:string" minOccurs="1"/>
+        <xs:element name="oferta" type="xs:string" minOccurs="0"/>
+        <xs:element name="descuento" type="xs:string" minOccurs="0"/>
+        <xs:element name="pvp" type="xs:string" minOccurs="1"/>      
+        
+       </xs:sequence>
+        <xs:attribute name="importe" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="tipoLinea" mixed="true">
+    <xs:attribute name="codigo-articulo" type="xs:ID" use="required"/>
+    <xs:attribute name="tipo" type="xs:string" use="required"/>
+</xs:complexType>
+
+</xs:schema>

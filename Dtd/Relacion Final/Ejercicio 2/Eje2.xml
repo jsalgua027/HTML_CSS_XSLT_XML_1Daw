@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE etiqueta SYSTEM "eje2.dtd">
+<etiqueta>
+	<nombre>Pepe García</nombre>
+	<calle>C/Ronda, 3</calle>
+	<pais>España</pais>
+	<codigo>18465</codigo>
+ </etiqueta>

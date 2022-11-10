@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<persona nacimiento="1999-10-20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="personaXsd.xsd">
+
+    <datos>
+        <nombre>Pepe</nombre>   <!-- SI PONGO OTRO NOMBRE QUE NO SEA EL DE LA LISTA ME DA ERROR-->
+        <apellidos>García Perez</apellidos>    <!-- SI PONGO MAS DE 13 CARACTERES DA ERROR-->
+        <dni>98765432-i</dni> <!-- SI PONGO MAS O MENOS DE 8 DIGITOS DA ERROR-->
+    </datos>
+
+    <precio moneda="euro">2.97</precio>   <!-- SI PONGO MENOS DE 7 DIGITOS O MENOS DE 2 DECIMALES DA ERROR (PUEDE SER NEGATIVO)-->
+     <!-- al añadirle atributo se vuelve complejo -->
+</persona>

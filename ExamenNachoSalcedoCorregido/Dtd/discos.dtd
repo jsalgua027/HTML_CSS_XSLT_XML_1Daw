@@ -1,0 +1,20 @@
+<!ELEMENT discos (grupo+,disco+)>
+<!ATTLIST discos tienda CDATA #REQUIRED>
+<!ELEMENT grupo (nombre,miembro+,nacionalidad?,web?,email?,calle?,localidad?)>
+<!ATTLIST grupo nom NMTOKEN #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT miembro (#PCDATA)>
+<!ELEMENT nacionalidad (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT calle (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT disco (interprete,titulo,discografica?,anio,stock)>
+<!ATTLIST disco precio NMTOKEN #REQUIRED>
+<!ELEMENT interprete EMPTY>
+<!ATTLIST interprete grupo NMTOKEN #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT discografica (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+<!ATTLIST anio mes NMTOKEN #IMPLIED>
+<!ELEMENT stock (#PCDATA)>

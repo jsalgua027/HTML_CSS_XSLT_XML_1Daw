@@ -1,0 +1,31 @@
+<?xmls version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Pedido SYSTEM "venta_herramienta.dtd">
+
+<Pedido fecha="20/09/1999">
+	<Destino>
+		<Nombre>Alicia Abad</Nombre>
+		<Direccion> Plaza de la Duquesa 12</Direccion>
+		<Ciudad>Albacete</Ciudad>
+		<CodPostal>05020</CodPostal>
+	</Destino>
+		
+		<Ordenante>
+			<Nombre>Roverto Movilla</Nombre>
+			<Direccion>General Ricardos 56</Direccion>
+			<Ciudad>Madrid</Ciudad>
+			<CodPostal>28055</CodPostal>
+		</Ordenante>
+		<Observaciones>Urgente</Observaciones>
+		<Contenido>
+			<Producto cod="872-AA" precio="148.95">Una cortadora cesped</Producto>
+			<Producto cod="926-FH" precio="7.98">Tres podadoras</Producto>
+		</Contenido>
+	
+</Pedido> 
+
+
+
+
+
+
+

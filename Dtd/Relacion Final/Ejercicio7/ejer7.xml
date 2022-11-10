@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE cd[
+<!ELEMENT cd (cancion+, fecha)>
+
+<!ELEMENT cancion (titulo+, compositores+, productores+, sello+, artista+)>
+<!ATTLIST cancion duracion CDATA #REQUIRED>
+<!ATTLIST cancion anio CDATA #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT sello (#PCDATA)>
+<!ELEMENT artista (#PCDATA)>
+<!ELEMENT compositores (compositor+)>
+<!ELEMENT compositor (nombres+,apellidos+)>
+<!ELEMENT nombres (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT productores (productor+)>
+<!ELEMENT productor (nombres+,apellidos+)>
+<!ELEMENT fecha EMPTY>
+<!ATTLIST fecha dia CDATA #REQUIRED>
+<!ATTLIST fecha mes CDATA #REQUIRED>		
+<!ATTLIST fecha	anio CDATA #REQUIRED>
+		
+
+ ]>
+
+
+
+<cd>
+
+
+	<cancion duracion="4:47" anio="2008">
+		
+		<titulo> Give it 2 me</titulo>
+		
+		<compositores>
+			<compositor>
+				<nombres>Pharrell</nombres>
+				<apellidos>Williams</apellidos>
+			</compositor>
+		</compositores>
+		
+		<productores>
+			<productor>
+				<nombres>Pharrell</nombres>
+				<apellidos>Williams</apellidos>
+			</productor>
+		</productores>
+
+		<sello>
+		Warner Bros. Records
+		</sello>
+		
+		<artista>
+			Madonna
+		</artista>
+
+
+
+	</cancion>
+	<fecha dia="_02" mes="_03" anio="_2008" />
+	
+	
+</cd>

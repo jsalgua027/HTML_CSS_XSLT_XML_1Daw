@@ -1,0 +1,11 @@
+<!ELEMENT libreta (usuarios* , clientes*)>
+<!ELEMENT usuarios (usuario*)>
+<!ATTLIST usuario id ID #REQUIRED>
+<!ELEMENT usuario (nombre+, telefono+, direccion+)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT telefono EMPTY>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT clientes (cliente*)>
+<!ATTLIST cliente id ID #REQUIRED>
+<!ELEMENT cliente (nombre+, telefono+, direccion+)>
+

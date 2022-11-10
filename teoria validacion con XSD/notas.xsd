@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="notas" type="tipoNotas"/>
+
+	<xs:complexType name="tipoNotas">
+		<xs:sequence> <!-- para que de igual el orden-->
+			<xs:element name="nota" type="tipoNota" minOccurs="2" maxOccurs="2"></xs:element>
+		</xs:sequence>	
+	</xs:complexType>
+
+
+
+
+
+	<xs:complexType name="tipoNota" mixed="true">
+			<xs:sequence> <!-- para que de igual el orden-->
+				<xs:element name="de" type="xs:string"/>
+				<xs:element name="para" type="xs:string"/>
+				<xs:choice>
+					<xs:element name="titulo" type="xs:string"/>
+					<xs:element name="fecha" type="xs:date"/>
+				</xs:choice>	
+				<xs:element name="contenido" type="xs:string"/>
+			</xs:sequence>	
+	</xs:complexType>
+
+
+</xs:schema>
+
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+
+ para los esquemas hay dos tipos de elementos
+el simple solo guarda texto
+el complejo son todos los demas como los que contienen atributos, la raiz es complejo
+-->
+<!--
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="nota">
+		<xs:complexType>
+			<xs:sequence>
+			<xs:element name="de" type="xs:string"/>
+			<xs:element name="para" type="xs:string"/>
+			<xs:element name="titulo" type="xs:string"/>
+			<xs:element name="contenido" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</element>
+
+</schema>
+
+ xs es el alias que pones en los demas, puede llamarse como quieras -->
+
+
+<!-- otra forma de hacerlo-->

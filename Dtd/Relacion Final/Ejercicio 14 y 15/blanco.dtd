@@ -1,0 +1,18 @@
+<!ELEMENT banco ((clientes,sucursales)|(sucursales,clientes))>
+<!ENTITY % id_re "ID #REQUIRED">  <!-- entidad parametrizada -->
+<!ELEMENT clientes (cliente+)>
+<!ELEMENT sucursales (sucursal+)>
+<!ELEMENT cliente ((prestamo*,cuenta+, prestamo*)+)>  <!-- con esta estructura y ese mas conseguimos la alternacia entre uno y otro -->
+<!ATTLIST cliente nif %id_re;>
+<!ELEMENT prestamo EMPTY>
+<!ATTLIST prestamo num %id_re;>
+<!ELEMENT cuenta EMPTY>
+<!ATTLIST cuenta cod IDREF #REQUIRED
+		  permiso (titular|autorizado) #REQUIRED>
+		  
+<!ELEMENT sucursal (cuenta_corriente+)>
+<!ATTLIST sucursal id ID #REQUIRED>
+<!ELEMENT cuenta_corriente (domiciliacion*)>
+<!ATTLIST cuenta_corriente cod %id_re;>
+<!ELEMENT domiciliacion EMPTY>
+<!ATTLIST domiciliacion num %id_re;>		  

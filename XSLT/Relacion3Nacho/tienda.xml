@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transf6.xsl"?>
+<tienda>
+    <nombre>La tiendecilla</nombre>
+    <telefono>953 87 12 23</telefono>
+    <producto>
+        <codigo>92</codigo>
+        <cantidad>10</cantidad>
+        <articulo>Radio-Casette</articulo>
+    </producto>
+    <producto>
+        <codigo>101</codigo>
+        <cantidad>3</cantidad>
+        <articulo>Sofá</articulo>
+    </producto>
+    <producto>
+        <codigo>103</codigo>
+        <cantidad>50</cantidad>
+        <articulo>Reloj Cocina</articulo>
+    </producto>
+</tienda>

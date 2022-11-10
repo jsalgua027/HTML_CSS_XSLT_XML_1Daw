@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE secciones[
+<!ELEMENT secciones ((seccion+,empleados+)+)>
+<!ELEMENT seccion (motor+)>
+<!ATTLIST seccion id ID #REQUIRED>
+<!ELEMENT motor (piezas+)>
+<!ATTLIST motor cod ID #REQUIRED>
+<!ELEMENT piezas (#PCDATA)>
+<!ELEMENT empleados (encargado+,empleado+)>
+<!ELEMENT encargado (#PCDATA)>
+<!ATTLIST encargado motor IDREF #REQUIRED>
+<!ATTLIST empleado motor IDREF #REQUIRED>
+<!ELEMENT empleado (familiares*)>
+<!ELEMENT familiares EMPTY>
+
+]>
+
+
+
+<secciones>
+	<seccion id="_1b">
+		<motor cod="_1">
+			<piezas>
+			</piezas>
+		</motor>
+	</seccion>
+	<empleados>
+		<encargado motor="_1">
+			
+		</encargado>
+		
+		<empleado motor="_1">
+			
+			
+			<familiares/>
+		</empleado>
+	</empleados>
+	
+	<seccion id="_2b">
+		<motor cod="_2">
+			<piezas>
+			</piezas>
+		</motor>
+	</seccion>
+	<empleados>
+		<encargado motor="_2">
+			
+			
+		</encargado>
+		
+		<empleado motor="_2">
+			
+			<familiares/>
+		</empleado>
+	</empleados>
+
+</secciones>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<!DOCTYPE biblioteca [
+<!ELEMENT biblioteca (libros,autores,editoriales)>
+<!ELEMENT libros (libro+)>
+<!ELEMENT libro (titulo,precio,fec_publica,revisiones?)>
+<!ATTLIST libro
+		isbn ID #REQUERIDE
+		autores IDREFS #REQUERIDE
+		editorial IDREF #REQUERIDE
+	>
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio moneda (euro) #REQUIRED>
+<!ELEMENT fec_publica (#PCDATA)>
+<!ELEMENT revisiones (revision+)>
+<!ELEMENT revision (valoracion, comentario)>
+<!ELEMENT valoracion (#PCDATA)>
+<!ELEMENT comentario (#PCDATA)>
+
+<!ELEMENT autores (autor+)>
+<!ELEMENT autor (nombre,apellido,email)>
+<!ATTLIST autor nif ID #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!ELEMENT editoriales (editorial+)>
+<!ELEMENT editorial (oficina,web)>
+<!ATTLIST editorial nombre ID #REQUIRED>
+<!ELEMENT oficina (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
+
+]>
+<biblioteca>
+	<libros>
+		<libro isbn="_1-55655-767-6" autores="_23456788P _23456787G" editorial="McGraw-Hill">
+			<titulo>Fundamentos de bases de datos</titulo>
+			<precio moneda="euro">40</precio>
+			<fec_publica>2003</fec_publica>
+			<revisiones>
+				<revision autor="_23456789N">
+					<valoracion>8.5</valoracion>
+					<comentario>Es un libro de texto básico</comentario>
+				</revision>
+			</revisiones>
+		</libro>	
+			<!-- segundo libro 2 autores y un revisor -->
+			<libro isbn="_2-545648-88-6" autores="_2345689M _23456789N " editorial="McGraw-Hill">
+				<titulo>La historia interimnable</titulo>
+				<precio moneda="euro">45</precio>
+				<fecha_publicacion>1985</fecha_publicacion>
+				<revisiones>
+					<revisor autor="_23456788P">
+						<valoracion>8.5</valoracion>
+						<comentario>Novela de ciencia ficción</comentario>
+					</revisor>
+				</revisiones>
+			</libro>
+
+			<!-- tercer libro 1 autor y 3 revisores -->
+			<libro isbn="_8-8545-5456" autores="_23456788P" editorial="Planeta">
+				<titulo>Las mil y una noches</titulo>
+				<precio moneda="euro">25</precio>
+				<fecha_publicacion>2000</fecha_publicacion>
+				<revisiones>
+					<revisor autor="_23456787G">
+						<valoracion>5</valoracion>
+						<comentario>Novela clasica</comentario>
+					</revisor>
+					<revisor autor="_23456789N">
+						<valoracion>7</valoracion>
+						<comentario>Novela aceptable</comentario>
+					</revisor>
+					<revisor  autor="_2345689M">
+						<valoracion>6.5</valoracion>
+						<comentario>Novela del desierto</comentario>
+					</revisor>
+				</revisiones>
+			</libro>
+
+			<autores>
+				<autor nif="_23456788P">
+					<nombre>Abraham</nombre>
+					<apellidos>Silberschatz</apellidos>
+					<email>silbers@hotmail.com</email>
+				</autor>
+				 <autor nif="_23456787G">
+					<nombre>Henry</nombre>
+					<apellidos>Korth</apellidos>
+					<email>korth@hotmail.com</email>
+				</autor>
+				<autor nif="_23456789N">
+					<nombre>James</nombre>
+					<apellidos>Smith</apellidos>
+				</autor>
+				<autor nif="_2345689M">
+					<nombre>Pepe</nombre>
+					<apellidos>Viruela</apellidos>
+					<email>pviruela@hotmail.com</email>
+				</autor>
+
+
+			</autores>
+			<editoriales>
+				<editorial nombre="McGraw-Hill">
+					<oficina>Av. Santander s/n</oficina>
+					  <web>http://www.mcgrawhill.es</web>
+				</editorial>
+				<editorial nombre="Planeta">
+					  <oficina>Av. Santander s/n</oficina>
+					  <web>http://www.planeta.es</web>
+				  </editorial>
+		
+			</editoriales>
+
+	</libros>
+	</biblioteca>

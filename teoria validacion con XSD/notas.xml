@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<notas  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="notas.xsd">  <!-- con este atributo se enlaza -->
+	<nota >
+		<de>juan</de>
+		<para>pedro</para>
+	
+		<fecha>2022-01-01</fecha>
+		<contenido>A las 7:00 pon despertador para ir instituto</contenido>
+	
+	</nota >
+
+	<nota >  
+		<de>juan</de>
+		<para>pedro</para>
+	
+		<titulo>ejemplo de titulo</titulo>
+		<contenido>A las 7:00 pon despertador para ir instituto</contenido>
+	
+	</nota>
+	
+</notas>

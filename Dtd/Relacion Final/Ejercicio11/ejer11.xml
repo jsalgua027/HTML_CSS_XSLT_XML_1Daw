@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Libro SYSTEM "ejer11.dtd">
+
+<Libro id="jkl">
+	
+	<Titulo>
+		
+	</Titulo>
+	<Contenido>
+		<Capitulo materia="">
+			<Tema>
+			</Tema>
+			<Seccion apartados="2" dificil="">
+			</Seccion>
+		
+		</Capitulo>
+		<Separacion/>
+	</Contenido>
+	<Copyright>
+	</Copyright>
+
+
+</Libro>
+
+
+
+
+

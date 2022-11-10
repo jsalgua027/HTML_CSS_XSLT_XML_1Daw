@@ -1,0 +1,13 @@
+<!ELEMENT Pedido (Destino, Ordenante, Observaciones, Contenido)>
+<!ATTLIST Pedido fecha CDATA #REQUIRED>
+<!ELEMENT Destino (Nombre, Direccion, Ciudad, CodPostal)>
+<!ELEMENT Ordenante (Nombre, Direccion, Ciudad, CodPostal)>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Direccion (#PCDATA)>
+<!ELEMENT Ciudad (#PCDATA)>
+<!ELEMENT CodPostal (#PCDATA)>
+<!ELEMENT Observaciones (#PCDATA)>
+<!ELEMENT Contenido (Producto+)>
+<!ELEMENT Producto (#PCDATA)>
+<!ATTLIST Producto cod CDATA #REQUIRED>
+<!ATTLIST Producto precio CDATA #REQUIRED>
